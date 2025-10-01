@@ -70,18 +70,28 @@ export const Gallery = () => {
   const [images, setImages] = useState<typeof IMAGES>([])
 
   useEffect(() => {
-    setImages([...IMAGES].sort(() => Math.random() - 0.5))
+    const sortedImages = [...IMAGES].sort(() => Math.random() - 0.5)
+
+    setImages([...sortedImages, ...sortedImages, ...sortedImages])
   }, [])
 
   return images.length > 0 && (
-    <div className='gap-0 columns-2 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6'>
-      {images.map((image, index) => (
-        <Image
-          key={index}
-          src={image}
-          alt={`Gallery ${index}`}
-        />
-      ))}
+    <div className='fixed inset-0'>
+      <div className='mx-20 h-full overflow-y-auto overscroll-contain'>
+        <div
+          className='grid gap-25'
+          style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))' }}
+        >
+          {images.map((image, index) => (
+            <Image
+              key={index}
+              src={image}
+              alt={`Gallery ${index}`}
+              className='block w-full h-auto'
+            />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
