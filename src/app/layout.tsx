@@ -1,6 +1,13 @@
 import { Geist, Geist_Mono } from 'next/font/google'
 
+import { InstagramLogo } from '../components/instagram'
+import { LinkedinLogo } from '../components/linkedin'
+import { Logo } from '../components/logo'
+import { cn } from '../utils/tailwind'
+
 import type { Metadata } from 'next'
+
+// @ts-expect-error ignore
 import './globals.css'
 
 const geistSans = Geist({
@@ -25,10 +32,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={cn(geistSans.variable, geistMono.variable, 'antialiased bg-primary')}>
+        <div className='w-3/4 lg:w-2/3 mx-auto h-screen flex items-center justify-center'>
+          <div className='relative w-full overflow-hidden'>
+            <Logo className='fill-black animate-logo-move-left' />
+            <div className='absolute inset-0 bg-primary animate-logo-move-right' />
+          </div>
+        </div>
         {children}
+        <div className='fixed top-30 -right-6 md:-right-3 -rotate-90'>
+          <p className='text-lg font-bold text-white'>2019 - 2023</p>
+        </div>
+        <div className='fixed top-1/2 -right-15 md:-right-12 -rotate-90'>
+          <p className='text-lg font-bold text-white'>SANTIAGO DE CHILE</p>
+        </div>
+        <div className='fixed bottom-5 right-2 md:right-5'>
+          <div className='flex flex-col items-center gap-3'>
+            <LinkedinLogo />
+            <InstagramLogo />
+          </div>
+        </div>
       </body>
     </html>
   )
