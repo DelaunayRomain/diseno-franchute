@@ -40,7 +40,7 @@ export const Gallery = () => {
                 src={image}
                 alt={`Gallery ${index}`}
                 unoptimized={true}
-                className='block w-full'
+                className='block w-full hover:scale-105 transition-all duration-300'
               />
             </div>
           </div>
