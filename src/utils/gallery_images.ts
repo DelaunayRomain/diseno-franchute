@@ -1,8 +1,11 @@
 import Abstract1 from '../images/abstract-1.jpeg'
+import Abstract2 from '../images/abstract-2.jpeg'
 import Buffet1 from '../images/buffet-1.jpeg'
 import Buffet2 from '../images/buffet-2.jpeg'
 import Cabinet1 from '../images/cabinet-1.jpeg'
 import Cabinet2 from '../images/cabinet-2.jpeg'
+import Lamp1 from '../images/lamp-1.jpeg'
+import Lamp2 from '../images/lamp-2.jpeg'
 import Mirror1 from '../images/mirror-1.jpeg'
 import Mirror2 from '../images/mirror-2.jpeg'
 import Mirror3 from '../images/mirror-3.jpeg'
@@ -24,16 +27,16 @@ import Table5 from '../images/table-5.jpeg'
 import TableAbstract1 from '../images/table-abstract-1.jpeg'
 import TableAbstract2 from '../images/table-abstract-2.jpeg'
 import TableAbstract3 from '../images/table-abstract-3.jpeg'
-import TableAbstract4 from '../images/table-abstract-4.jpeg'
-import TableAbstract5 from '../images/table-abstract-5.jpeg'
-import TableAbstract6 from '../images/table-abstract-6.jpeg'
 
 export const galleryImages = [
   Abstract1,
+  Abstract2,
   Buffet1,
   Buffet2,
   Cabinet1,
   Cabinet2,
+  Lamp1,
+  Lamp2,
   Mirror1,
   Mirror2,
   Mirror3,
@@ -55,7 +58,4 @@ export const galleryImages = [
   TableAbstract1,
   TableAbstract2,
   TableAbstract3,
-  TableAbstract4,
-  TableAbstract5,
-  TableAbstract6,
 ]
