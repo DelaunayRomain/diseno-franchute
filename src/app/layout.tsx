@@ -1,6 +1,10 @@
 import { Geist, Geist_Mono } from 'next/font/google'
 
+import { FixedAside } from '../components/fixed_aside'
+import { cn } from '../utils/tailwind'
+
 import type { Metadata } from 'next'
+// @ts-expect-error ignore
 import './globals.css'
 
 const geistSans = Geist({
@@ -25,10 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={cn(geistSans.variable, geistMono.variable, 'antialiased bg-black')}>
         {children}
+        <FixedAside />
       </body>
     </html>
   )
