@@ -13,6 +13,12 @@ type Content = 'gallery' | 'about'
 const Home = () => {
   const [initialState, setInitialState] = React.useState(true)
   const [currentContent, setCurrentContent] = React.useState<Content>('gallery')
+  const [disabledButton, setDisabledButton] = React.useState(false)
+
+  const disableButton = () => {
+    setDisabledButton(true)
+    setTimeout(() => setDisabledButton(false), 1000)
+  }
 
   const isGallery = currentContent === 'gallery'
   const isAbout = currentContent === 'about'
@@ -39,9 +45,11 @@ const Home = () => {
       </FixedContentWrapper>
       <SwitchContentButton
         onClick={() => {
+          disableButton()
           setInitialState(false)
           setCurrentContent(currentContent === 'gallery' ? 'about' : 'gallery')
         }}
+        disabled={disabledButton}
         className={cn(
           !initialState && (isGallery ? 'animate-rotate-180-back' : 'animate-rotate-180'),
         )}

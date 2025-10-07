@@ -8,13 +8,15 @@ import { cn } from '../utils/tailwind'
 
 type SwitchContentButtonProps = {
   onClick: () => void
+  disabled: boolean
   className?: string
 }
 
-export const SwitchContentButton = ({ onClick, className }: SwitchContentButtonProps) => (
+export const SwitchContentButton = ({ onClick, disabled, className }: SwitchContentButtonProps) => (
   <div className='fixed top-4 right-2.5 lg:right-5 z-20'>
     <button
       type='button'
+      disabled={disabled}
       onClick={onClick}
     >
       <ChevronsLeft className={cn('w-10 h-10 text-white cursor-pointer', className)} />
