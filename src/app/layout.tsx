@@ -1,11 +1,11 @@
+import './globals.css'
+
 import { Geist, Geist_Mono } from 'next/font/google'
 
 import { FixedAside } from '../components/fixed_aside'
 import { cn } from '../utils/tailwind'
 
 import type { Metadata } from 'next'
-// @ts-expect-error ignore
-import './globals.css'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
