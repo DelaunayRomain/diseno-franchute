@@ -24,7 +24,7 @@ export const Gallery = () => {
   const { loadMoreRef } = useInfiniteScroll(fetchMoreImages)
 
   return images.length > 0 && (
-    <div className='ml-8 mr-15 lg:mr-20 py-8 max-w-[1400px] 2xl:mx-auto'>
+    <div className='ml-4 md:ml-8 mr-15 lg:mr-20 py-4 md:py-8 max-w-[1400px] 2xl:mx-auto'>
       <ResponsiveMasonry
         columnsCountBreakPoints={{
           0: 1,
