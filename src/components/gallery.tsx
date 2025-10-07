@@ -46,6 +46,7 @@ export const Gallery = () => {
                 <Image
                   src={image}
                   alt={`Furniture ${index}`}
+                  priority={index < 10}
                   unoptimized={true}
                   className='block w-full hover:scale-105 transition-all duration-300'
                 />
