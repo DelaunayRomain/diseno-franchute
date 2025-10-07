@@ -20,13 +20,13 @@ export const About = () => (
     >
       <Logo className='w-3/4 md:w-2/3 lg:w-1/2 p-8 fill-white' />
       <p>
-        Todo empezó en el siglo XVII, cuando maestros constructores franceses e italianos tuvieron la idea de pintar una falsificación de mármol sobre los muros de los palacios y las iglesias, porque el uso de la piedra les resultaba muy difícil. Rápidamente esta técnica fue considerada como un arte, de tal forma que las pinturas de mármol de los grandes maestros llegaron a ser más prestigiosas que la misma materia.
+        Todo empezó en el siglo XVII, cuando maestros constructores franceses e italianos tuvieron la idea de pintar una falsificación de mármol sobre los muros de los palacios y las iglesias, porque el uso de la piedra les resultaba muy difícil. Rápidamente esta técnica fue considerada un arte, de tal forma que las pinturas de mármol de los grandes maestros llegaron a ser más prestigiosas que la misma materia.
       </p>
       <p>
-        Hoy día, esta técnica de pintura se ocupa en restauración de patrimonio, pero ya no surge de una búsqueda creativa. Es así como nace Diseño Franchute. Aprendí esta técnica "faux-marbre" en Francia en 2017, y llegué a Santiago deChile en 2019 con la intención de crear una marca en la cual podríamos jugar de nuevo con la falsificación del mármol a través de la creación de nuevas piezas.
+        Hoy día, esta técnica de pintura se ocupa en restauración de patrimonio, pero ya no surge de una búsqueda creativa. Es así como nace Diseño Franchute. Aprendí esta técnica "faux-marbre" en Francia en 2017 y llegué a Santiago de Chile en 2019 con la intención de jugar con la falsificación del mármol a través de la creación de nuevas piezas.
       </p>
       <p>
-        De a poco se desarrolló la línea estética de Diseño Franchute, con una atracción para la curva imperfecta y abstracta, y el uso excesivo de colores y de pan de oro como si fuera la imitación de una piedra pirata imaginaria.
+        De a poco se desarrolló la línea estética de Diseño Franchute, con una atracción por la curva imperfecta y abstracta, el uso excesivo de colores y el pan de oro como si fuera la imitación de una piedra pirata imaginaria.
       </p>
     </div>
   </div>
