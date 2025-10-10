@@ -15,7 +15,8 @@ export const About = () => (
     <div
       className={cn(
         'min-h-screen pt-6 pb-20 flex flex-col items-center gap-3 sm:gap-6',
-        'text-white text-justify font-semibold sm:text-lg md:text-xl',
+        'text-white text-justify sm:text-lg md:text-xl',
+        'font-kantumruy font-[300]',
       )}
     >
       <Logo className='w-3/4 md:w-2/3 lg:w-1/2 p-8 fill-white' />

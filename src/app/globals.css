@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+@theme inline {
   --animate-appear: appear 1.5s ease-in-out forwards;
   --animate-rotate-180: rotate-180 0.3s ease-in-out forwards;
   --animate-rotate-180-back: rotate-180-back 0.3s ease-in-out forwards;
@@ -8,6 +8,8 @@
   --animate-gallery-move-right: gallery-move-right 1.2s ease-out forwards;
   --animate-about-move-left: about-move-left 1.2s ease-out forwards;
   --animate-about-move-right: about-move-right 1.2s ease-out forwards;
+
+  --font-kantumruy: var(--google-font-kantumruy);
 }
 
 @keyframes appear {

@@ -1,20 +1,15 @@
 import './globals.css'
 
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Kantumruy_Pro } from 'next/font/google'
 
 import { FixedAside } from '../components/fixed_aside'
 import { cn } from '../utils/tailwind'
 
 import type { Metadata } from 'next'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const kantumruyFont = Kantumruy_Pro({
   subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  variable: '--google-font-kantumruy',
 })
 
 export const metadata: Metadata = {
@@ -29,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={cn(geistSans.variable, geistMono.variable, 'antialiased bg-black')}>
+      <body className={cn(kantumruyFont.variable, 'antialiased bg-black')}>
         {children}
         <FixedAside />
       </body>
