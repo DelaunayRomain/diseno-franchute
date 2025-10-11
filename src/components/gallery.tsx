@@ -6,24 +6,26 @@ import Image from 'next/image'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
 import { useInfiniteScroll } from '../hooks/infinite_scroll'
-import { galleryImages } from '../utils/gallery_images'
 
-export const Gallery = () => {
-  const [images, setImages] = useState<typeof galleryImages>([])
+import type { Furniture } from '@prisma/client'
 
-  const fetchMoreImages = () => {
-    const sortedImages = [...galleryImages].sort(() => Math.random() - 0.5)
+export const Gallery = ({ furnitures }: { furnitures: Furniture[] }) => {
+  const [allFurnitures, setAllFurnitures] = useState<Furniture[]>([])
 
-    setImages((prev) => [...prev, ...sortedImages])
+  const fetchMoreFurnitures = () => {
+    const sortedFurnitures = [...furnitures].sort(() => Math.random() - 0.5)
+
+    setAllFurnitures((prev) => [...prev, ...sortedFurnitures])
   }
 
   useEffect(() => {
-    fetchMoreImages()
+    fetchMoreFurnitures()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const { loadMoreRef } = useInfiniteScroll(fetchMoreImages)
+  const { loadMoreRef } = useInfiniteScroll(fetchMoreFurnitures)
 
-  return images.length > 0 && (
+  return allFurnitures.length > 0 && (
     <div className='ml-4 md:ml-8 mr-15 lg:mr-20 py-4 md:py-8 max-w-[1400px] 2xl:mx-auto'>
       <ResponsiveMasonry
         columnsCountBreakPoints={{
@@ -37,20 +39,19 @@ export const Gallery = () => {
           style={{ gap: '15px' }}
           itemStyle={{ gap: '15px' }}
         >
-          {images.map((image, index) => (
+          {allFurnitures.map((furniture, index) => (
             <div
               key={index}
-              className=''
+              className='overflow-hidden animate-appear'
             >
-              <div className='flex items-center justify-center overflow-hidden animate-appear'>
-                <Image
-                  src={image}
-                  alt={`Furniture ${index}`}
-                  priority={index < 10}
-                  unoptimized={true}
-                  className='block w-full hover:scale-105 transition-all duration-300'
-                />
-              </div>
+              <Image
+                src={furniture.image_url}
+                alt={furniture.name}
+                priority={index < 4}
+                width={900}
+                height={600}
+                className='w-full h-auto hover:scale-105 transition-all duration-300'
+              />
             </div>
           ))}
         </Masonry>
