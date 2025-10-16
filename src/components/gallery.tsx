@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react'
 
-import Image from 'next/image'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
+import { GalleryImage } from './gallery_image'
 import { useInfiniteScroll } from '../hooks/infinite_scroll'
 
 import type { Furniture } from '@prisma/client'
@@ -40,19 +40,11 @@ export const Gallery = ({ furnitures }: { furnitures: Furniture[] }) => {
           itemStyle={{ gap: '15px' }}
         >
           {allFurnitures.map((furniture, index) => (
-            <div
+            <GalleryImage
               key={index}
-              className='overflow-hidden animate-appear'
-            >
-              <Image
-                src={furniture.image_url}
-                alt={furniture.name}
-                priority={index < 4}
-                width={900}
-                height={600}
-                className='w-full h-auto hover:scale-105 transition-all duration-300'
-              />
-            </div>
+              furniture={furniture}
+              priority={index < 4}
+            />
           ))}
         </Masonry>
       </ResponsiveMasonry>
