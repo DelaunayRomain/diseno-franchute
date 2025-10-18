@@ -10,7 +10,11 @@ export const useInfiniteScroll = (fetchData: () => void) => {
   }, [fetchData])
 
   React.useEffect(() => {
-    const observer = new IntersectionObserver(handleIntersection)
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null,
+      rootMargin: '0px 0px 800px 0px', // trigger before entering viewport
+      threshold: 0,
+    })
 
     if (loadMoreRef.current) {
       observer.observe(loadMoreRef.current)

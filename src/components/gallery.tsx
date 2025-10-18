@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import * as React from 'react'
 
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
@@ -10,7 +10,7 @@ import { useInfiniteScroll } from '../hooks/infinite_scroll'
 import type { Furniture } from '@prisma/client'
 
 export const Gallery = ({ furnitures }: { furnitures: Furniture[] }) => {
-  const [allFurnitures, setAllFurnitures] = useState<Furniture[]>([])
+  const [allFurnitures, setAllFurnitures] = React.useState<Furniture[]>([])
 
   const fetchMoreFurnitures = () => {
     const sortedFurnitures = [...furnitures].sort(() => Math.random() - 0.5)
@@ -18,7 +18,7 @@ export const Gallery = ({ furnitures }: { furnitures: Furniture[] }) => {
     setAllFurnitures((prev) => [...prev, ...sortedFurnitures])
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     fetchMoreFurnitures()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -40,15 +40,16 @@ export const Gallery = ({ furnitures }: { furnitures: Furniture[] }) => {
           itemStyle={{ gap: '15px' }}
         >
           {allFurnitures.map((furniture, index) => (
-            <GalleryImage
-              key={index}
-              furniture={furniture}
-              priority={index < 4}
-            />
+            <React.Fragment key={index}>
+              <GalleryImage
+                furniture={furniture}
+                priority={index < 4}
+              />
+              {index === allFurnitures.length - 1 && <div ref={loadMoreRef} />}
+            </React.Fragment>
           ))}
         </Masonry>
       </ResponsiveMasonry>
-      <div ref={loadMoreRef} />
     </div>
   )
 }
