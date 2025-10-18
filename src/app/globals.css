@@ -58,3 +58,8 @@
     display: none;
   }
 }
+
+@utility scroll-touch {
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
