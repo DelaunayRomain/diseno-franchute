@@ -8,11 +8,11 @@ import { Gallery } from '../components/gallery'
 import { SwitchContentButton } from '../components/switch_content_button'
 import { cn } from '../utils/tailwind'
 
-import type { Furniture } from '@prisma/client'
+import type { FurnitureWithBlur } from '../utils/blur_image'
 
 type Content = 'gallery' | 'about'
 
-export const MainContent = ({ furnitures }: { furnitures: Furniture[] }) => {
+export const MainContent = ({ furnitures }: { furnitures: FurnitureWithBlur[] }) => {
   const [initialState, setInitialState] = React.useState(true)
   const [currentContent, setCurrentContent] = React.useState<Content>('gallery')
   const [disabledButton, setDisabledButton] = React.useState(false)

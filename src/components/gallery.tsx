@@ -7,10 +7,10 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import { GalleryImage } from './gallery_image'
 import { useInfiniteScroll } from '../hooks/infinite_scroll'
 
-import type { Furniture } from '@prisma/client'
+import type { FurnitureWithBlur } from '../utils/blur_image'
 
-export const Gallery = ({ furnitures }: { furnitures: Furniture[] }) => {
-  const [allFurnitures, setAllFurnitures] = React.useState<Furniture[]>([])
+export const Gallery = ({ furnitures }: { furnitures: FurnitureWithBlur[] }) => {
+  const [allFurnitures, setAllFurnitures] = React.useState<FurnitureWithBlur[]>([])
 
   const fetchMoreFurnitures = () => {
     const sortedFurnitures = [...furnitures].sort(() => Math.random() - 0.5)

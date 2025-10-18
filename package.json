@@ -13,6 +13,7 @@
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "dependencies": {
+    "@plaiceholder/next": "^3.0.0",
     "@prisma/client": "^6.17.1",
     "lucide-react": "^0.544.0",
     "next": "15.5.4",

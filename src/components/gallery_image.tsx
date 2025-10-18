@@ -4,10 +4,10 @@ import Image from 'next/image'
 
 import { cn } from '../utils/tailwind'
 
-import type { Furniture } from '@prisma/client'
+import type { FurnitureWithBlur } from '../utils/blur_image'
 
 type GalleryImageProps = {
-  furniture: Furniture
+  furniture: FurnitureWithBlur
   priority: boolean
 }
 
@@ -19,6 +19,8 @@ export const GalleryImage = ({ furniture, priority }: GalleryImageProps) => (
       priority={priority}
       width={1600}
       height={1600}
+      placeholder='blur'
+      blurDataURL={furniture.blurDataURL}
       className='w-full h-auto hover:scale-103 transition-all duration-300'
     />
     <div
