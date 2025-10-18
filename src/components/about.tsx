@@ -6,7 +6,7 @@ import { cn } from '../utils/tailwind'
 export const About = () => (
   <div
     className={cn(
-      'ml-7 mr-15',
+      'ml-3 mr-15',
       'sm:ml-20 sm:mr-25',
       'md:ml-30 md:mr-35',
       'lg:mx-auto lg:w-2/3 lg:max-w-[1000px]',
